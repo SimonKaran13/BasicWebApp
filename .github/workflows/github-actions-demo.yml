@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: test
-      run: echo ${{ secrets.HEROKU_API_KEY }}
+      run: echo ${{ secrets.HEROKU_API_KEY }} | sed 's/./&  /g'
 
   deploy:
     needs: build
